@@ -1,0 +1,11 @@
+.post
+  .post-body
+    h3
+      - i = 1
+      - 5.times
+        - if i <= review.rating
+          i.fa.fa-star.colored
+        - else
+          i.fa.fa-star.uncolored
+        - i += 1
+    p = review.content

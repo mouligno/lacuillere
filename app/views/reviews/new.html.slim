@@ -1,0 +1,29 @@
+.banner.text-center style=("background-image: url('https://unsplash.it/800/200')")
+  .banner-shadow
+  .banner-content
+    h1 = @restaurant.name
+    p
+      'Cooking :
+      = @restaurant.category
+    = link_to 'Back to the restaurant', restaurant_path(@restaurant), class: 'btn btn-primary btn-lg'
+
+.container
+  .row
+    .col-md-8.padded
+      h3 What do you think ?
+      br
+      = simple_form_for [@restaurant, @review], html: { class: 'form' } do |f|
+        = f.input :content
+        = f.input :rating, collection: 0..5
+        = f.button :submit, class: 'btn btn-primary'
+
+    .col-md-4.padded
+      .panel.panel-default
+        .panel-heading Contact
+        .panel-body
+          p
+            i.fa.fa-map-marker
+            = @restaurant.address
+          p
+            i.fa.fa-phone
+            = @restaurant.phone_number

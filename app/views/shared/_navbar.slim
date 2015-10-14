@@ -1,0 +1,10 @@
+nav.navbar-wagon
+  .container.navbar-wagon-container
+    = link_to root_path
+        = image_tag('logo.png', class: 'navbar-wagon-logo')
+    .navbar-wagon-links
+      .navbar-wagon-item-container
+        = link_to 'View all restaurants', restaurants_path, class: 'navbar-wagon-item navbar-wagon-link'
+        = link_to 'Add a restaurant', new_restaurant_path, class: 'navbar-wagon-item navbar-wagon-button btn'
+
+

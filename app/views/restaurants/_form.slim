@@ -1,0 +1,7 @@
+= simple_form_for restaurant, html: { class: 'form' } do |f|
+  = f.input :name
+  = f.input :address
+  = f.input :phone_number
+  = f.input :category, collection: %w(chinese italian japanese french belgian)
+  .form-group
+    = f.button :submit, class: 'btn btn-primary'

@@ -1,0 +1,35 @@
+.banner.text-center style=("background-image: url('https://unsplash.it/800/200')")
+  .banner-shadow
+  .banner-content
+    h1 = @restaurant.name
+    p
+      'Cooking :
+      = @restaurant.category
+    = link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary btn-lg'
+
+.container
+  .row
+    .col-md-8.padded
+      - if @restaurant.reviews.any?
+        - @restaurant.reviews.each do |review|
+          = render 'review', review: review
+      - else
+        p
+          'There is no reviews for this restaurant yet. Just try it and give us your feedbacks.
+          br
+          strong Bon appétit!
+      = link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-primary btn-md'
+
+    .col-md-4.padded
+      .panel.panel-default
+        .panel-heading Contact
+        .panel-body
+          p
+            i.fa.fa-map-marker
+            = @restaurant.address
+          p
+            i.fa.fa-phone
+            = @restaurant.phone_number
+
+
+

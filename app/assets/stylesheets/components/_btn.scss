@@ -1,0 +1,16 @@
+.btn-primary {
+  margin-left: 0px;
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: $brand-color;
+  color: white;
+  font-size: 14px;
+  border: 2px solid $brand-color;
+
+  &:hover {
+    color: white;
+    background: $brand-color;
+    border-color: darken($brand-color, 10%);
+  }
+}
